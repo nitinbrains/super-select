@@ -25,11 +25,11 @@ class SuperSelect extends Component {
       const{treeData}=this.state;
     if (value[0] && value[0].value === "All") {
         this.setState({value: treeData[0].children},()=>{
-        this.props.getSelectedItems(this.state.value)
+        this.props.getSelectedValue(this.state.value)
         })
     } else {
         this.setState({value},()=>{
-        this.props.getSelectedItems(this.state.value)
+        this.props.getSelectedValue(this.state.value)
         })
     }
    
@@ -46,7 +46,7 @@ class SuperSelect extends Component {
       searchPlaceholder: "Please select",
       dropdownMatchSelectWidth: true,
       labelInValue: true,
-      treeNodeLabelProp: "label",
+      treeNodeLabelProp: "title",
       maxTagCount: 1,
       style: {
         width: "100%"
@@ -54,9 +54,6 @@ class SuperSelect extends Component {
     };
     return(
       <Fragment>
-        <div className="test1">
-          test
-        </div>
      <TreeSelect {...tProps} />
      </Fragment>
     )

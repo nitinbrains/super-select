@@ -1,6 +1,6 @@
 {
   "name": "select-super",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -42,5 +42,12 @@
     "babel-preset-react-app": "^7.0.1",
     "rimraf": "^2.6.3"
   },
+  "keywords": [
+    "select",
+    "multiselect",
+    "multiselectwithcheckbox",
+    "react",
+    "react-superselect"
+  ],
   "author": "Nitin Sharma <nitinbrains@gmail.com>"
 }

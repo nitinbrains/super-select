@@ -7,7 +7,6 @@ class App extends Component {
     return (
       <div>
           <SuperSelect/>
-          <img style={{position:"sticky",left:"98%",marginTop:'-52px'}} src={icon}/>
       </div>
     )
   }

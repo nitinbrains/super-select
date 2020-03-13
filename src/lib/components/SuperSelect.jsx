@@ -12,12 +12,17 @@ class SuperSelect extends Component {
   };
 
   componentDidMount(){
-     this.setState({treeData:this.props.options})
+     this.setState({treeData:this.props.options,
+      value:this.props.defaultChecked
+    })
   }
 
   componentDidUpdate(prevProps){
     if(this.props.options!==prevProps.options){
       this.setState({treeData:this.props.options})
+    }
+    if(this.props.defaultChecked!==prevProps.defaultChecked){
+      this.setState({value:this.props.defaultChecked})
     }
   }
 
@@ -64,7 +69,7 @@ class SuperSelect extends Component {
     };
     return(
       <Fragment>
-     <TreeSelect {...tProps} />
+     <TreeSelect {...tProps}/>
      </Fragment>
     )
   }

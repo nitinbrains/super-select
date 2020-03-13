@@ -22,17 +22,27 @@ class SuperSelect extends Component {
   }
 
   onChange = value => {
-      const{treeData}=this.state;
+    let labelArr=[]
+    const{treeData}=this.state;
     if (value[0] && value[0].value === "All") {
         this.setState({value: treeData[0].children},()=>{
         this.props.getSelectedValue(this.state.value)
         })
     } else {
-        this.setState({value},()=>{
+      let data=treeData[0].children;
+      value.map((v)=>{
+        labelArr.push({label:v.label})
+        return labelArr
+      })
+      const myArrayFiltered = data.filter((el) => {
+        return labelArr.some((f) => {
+          return f.label === el.title;
+        });
+      });
+        this.setState({value:myArrayFiltered},()=>{
         this.props.getSelectedValue(this.state.value)
         })
     }
-   
   };
 
   render() {

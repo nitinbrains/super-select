@@ -32,6 +32,7 @@ function (_Component) {
     };
 
     _this.onChange = function (value) {
+      var labelArr = [];
       var treeData = _this.state.treeData;
 
       if (value[0] && value[0].value === "All") {
@@ -41,8 +42,21 @@ function (_Component) {
           _this.props.getSelectedValue(_this.state.value);
         });
       } else {
+        var data = treeData[0].children;
+        value.map(function (v) {
+          labelArr.push({
+            label: v.label
+          });
+          return labelArr;
+        });
+        var myArrayFiltered = data.filter(function (el) {
+          return labelArr.some(function (f) {
+            return f.label === el.title;
+          });
+        });
+
         _this.setState({
-          value: value
+          value: myArrayFiltered
         }, function () {
           _this.props.getSelectedValue(_this.state.value);
         });

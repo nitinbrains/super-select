@@ -70,7 +70,8 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.setState({
-        treeData: this.props.options
+        treeData: this.props.options,
+        value: this.props.defaultChecked
       });
     }
   }, {
@@ -79,6 +80,12 @@ function (_Component) {
       if (this.props.options !== prevProps.options) {
         this.setState({
           treeData: this.props.options
+        });
+      }
+
+      if (this.props.defaultChecked !== prevProps.defaultChecked) {
+        this.setState({
+          value: this.props.defaultChecked
         });
       }
     }

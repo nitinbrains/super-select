@@ -1,6 +1,6 @@
 {
   "name": "select-super",
-  "version": "1.2.0",
+  "version": "1.2.5",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -47,7 +47,9 @@
     "multiselect",
     "multiselectwithcheckbox",
     "react",
-    "react-superselect"
+    "react-superselect",
+    "react-tree-select",
+    "tree-select"
   ],
   "author": "Nitin Sharma <nitinbrains@gmail.com>"
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SuperSelect from './lib/components/SuperSelect'
-import icon from "./down_icon.svg"
+
 
 class App extends Component {
   render() {
